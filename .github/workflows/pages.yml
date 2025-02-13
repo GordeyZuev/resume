@@ -33,4 +33,17 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/cv
           destination_dir: cv
-          publish_branch: main
+          publish_branch: deployed_cv
+          keep_files: false
+          exclude_assets: '*.aux,*.log,*.out'
+
+          
+      - name: Commit and Push to Main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add deployed_cv/cv/resume.pdf
+          git commit -m "Deploy updated resume" || echo "No changes to commit"
+          git push origin main
+
