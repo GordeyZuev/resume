@@ -1,0 +1,25 @@
+name: Build Resume
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build --no-cache --tag resume_img -f Dockerfile .
+
+      - name: Run container
+        run: docker run --rm -v ${{ github.workspace }}:/workspace resume_img
+
+      - name: Upload pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume
+          path: ${{ github.workspace }}/cv/resume.pdf
