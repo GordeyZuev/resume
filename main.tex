@@ -1,6 +1,7 @@
 %-------------------------
-% Resume in LaTeX
-% Author : Jake Gutierrez (Modified by Gordey Zuev)
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
 
@@ -17,13 +18,26 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[T1]{fontenc} % Улучшенная поддержка шрифтов
+\usepackage{lmodern}     % Latin Modern с дополнительными вариантами
+\usepackage{kpfonts} 
 
-% Ensure that PDF is machine-readable
 \input{glyphtounicode}
-\pdfgentounicode=1
 
-% Set page style
-\setlength{\footskip}{10pt}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -37,16 +51,27 @@
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
+\urlstyle{same}
+
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Section formatting
-\titleformat{\section}
-  {\large\bfseries}{\thesection}{1em}{}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
@@ -57,84 +82,176 @@
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-  \item
+    \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-  \item
+    \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\setlength{\footskip}{4.1pt}
 \begin{document}
 
 %----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
 \begin{center}
-    \textbf{\Huge Gordey Zuev} \\ \vspace{1pt}
-    \href{https://www.linkedin.com/in/gordey-zuev/}{\textcolor{blue}{LinkedIn}} $|$
+    \textsc{\Huge{\textbf{Gordey Zuev}}} \\ \vspace{1pt}
+    \href{{https://www.linkedin.com/in/gordey-zuev/}}{\textcolor{blue}{LinkedIn}} $|$
     \href{https://github.com/GordeyZuev}{\textcolor{blue}{GitHub}} $|$
     \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue}{gordey.zuev@gmail.com}}
 \end{center}
 
+
 %-----------EDUCATION-----------
 \section{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Higher School of Economics}{Moscow, Russia}
-    {Applied Mathematics and Information Science}{Sep. 2022 -- June 2026}
-  \resumeSubheading
-    {HSE Lyceum}{Moscow, Russia}
-    {Mathematics and Informatics}{Sep. 2019 -- May 2022}
-\resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National Research University Higher School of Economics (HSE)}{Moscow, Russia}
+      {Applied mathematics and informatics}{Sep. 2022 -- June 2026}
+    \resumeSubheading
+      {HSE Lyceum}{Moscow, Russia}
+      {Mathematics and Informatics}{Sep. 2019 -- May 2022}
+  \resumeSubHeadingListEnd
+
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Higher School of Economics}{Moscow, Russia}
-    {Software Engineer}{Sep. 2023 -- Present}
-  \resumeItemListStart
-    \resumeItem{Developed a REST API using FastAPI and PostgreSQL.}
-    \resumeItem{Built a full-stack application using Flask, React, PostgreSQL and Docker.}
-    \resumeItem{Visualized GitHub collaboration metrics in classrooms.}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Higher School of Economics}{Moscow, Russia}
+      {Lecturer's Teaching Assistant}{September 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{The course "Programming in Python" - Fall Term 23' and 24'}
+        \resumeItem{The master's course "Applied Python" - Spring Term 24' and 25'}
+        \resumeItem{The course "Python for data collection and analysis" - Spring Term 24' and 25'}
+        \resumeItem{The course "Industrial Development Tools" - Spring Term 24' and 25'}
+        \resumeItem{The main responsibility is to advise students and develop the curriculum.}
+    \resumeItemListEnd
+
+    \resumeSubSubheading
+      {Curator of the educational program}{January 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Communication with the academic supervisor regarding the curriculum}
+        \resumeItem{Monitoring students' academic performance. Help in solving various problems}
+        \resumeItem{Assistance in organizing the educational process}
+        \resumeItem{Analysis of learning outcomes in all courses}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {HSE Lyceum - Teaching}{Moscow, Russia}
+      {Invited teacher - Cource "Introduction into Olympiad Computer Science. Algorythms"}{September 2023 -- November 23}
+      \resumeItemListStart
+        \resumeItem{Development and design of educational material}
+        \resumeItem{Conducting lessons and consultations}
+    \resumeItemListEnd
+
+    \resumeSubSubheading
+      {Lyceum teacher - Cource "Programming on Python"}{November 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Development and design of educational material}
+        \resumeItem{Conducting lessons and checking homework assignments}
+        \resumeItem{Participation in the development of materials of the department}
+    \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Tutoring}{Moscow, Russia}
+      {Teacher - Courses "Introduction into ML" / "Algorythms" / "Applied math"}{June 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Development and design of educational material}
+        \resumeItem{Conducting lessons and consultations}
+    \resumeItemListEnd
+
+
+  \resumeSubHeadingListEnd
+
 
 %-----------PROJECTS-----------
 \section{Projects}
-\resumeSubHeadingListStart
-  \resumeProjectHeading
-      {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
-  \resumeItemListStart
-    \resumeItem{Developed a full-stack web app using Flask and React.}
-    \resumeItem{Implemented GitHub OAuth authentication.}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
+            \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
+            \resumeItem{Visualized GitHub data to show collaboration}
+            \resumeItem{Used Celery and Redis for asynchronous tasks}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
+          \resumeItemListStart
+            \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
+            \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
+            \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
+            \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
 
-%-----------TECHNICAL SKILLS-----------
+
+\section{Awards}
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Award "The best teaching Assistant of the semester"}{Higher School of Economics - 3 Times}
+      {The award is given for high results in the position of a teaching assistant.}{October 2023}
+        \resumeItemListStart
+            \resumeItem{The course "Programming in Python", Fall Term 23'}
+            \resumeItem{The course "Python for data collection and analysis", Spring Term 24'}
+            \resumeItem{The course "Industrial Development Tools", Spring Term 24'}
+          \resumeItemListEnd
+
+    \resumeSubheading
+      {Award "Young entrepreneur at the Faculty"}{Higher School of Economics}
+      {The award is given to students with outstanding startup projects.}{October 2023}
+
+    \resumeSubheading
+      {Winner of the "Kurchatov" Olympiad (Math)}{Moscow, Russia}
+      {The Olympiad is held by the Kurchatov Institute National Research Center}{April 2022}
+
+    \resumeSubheading
+      {Winner of the "PhysTech" Olympiad (Math)}{Moscow, Russia}
+      {The Olympiad is held by MIPT (Moscow Institute of Physics and Technology) }{April 2022}
+
+  \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
-  \small{
-    \item{
-      \textbf{Programming Languages}{: Python, SQL, C/C++} \\
-      \textbf{Frameworks}{: FastAPI, Flask} \\
-      \textbf{Developer Tools}{: Git, Docker, VS Code} \\
-      \textbf{Libraries}{: Scikit-learn, pandas, NumPy}
-    }
-  }
-\end{itemize}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, SQL (Postgres), RISC-V Assembler, C/C++} \\
+     \textbf{Frameworks}{: FastAPI} \\
+     \textbf{Developer Tools}{: Git, Docker, VS Code, PyCharm} \\
+     \textbf{Libraries}{: Scikit-learn, pandas, NumPy, Matplotlib} \\
+     \textbf{Languages}{: Russian (Native), English (C1), German (B1)}
+    }}
+ \end{itemize}
+
 
 %-------------------------------------------
 \end{document}
