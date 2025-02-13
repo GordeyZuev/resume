@@ -5,15 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Обновляем пакеты и устанавливаем необходимые LaTeX зависимости
 RUN apt-get update && apt-get install -y \
-    texlive \
-    texlive-latex-recommended \
-    texlive-latex-extra \
-    texlive-fonts-recommended \
-    texlive-fonts-extra \
-    texlive-base \
-    texlive-pictures \
-    texlive-lang-cyrillic \
-    texlive-xetex \
+    texlive-full \
     latexmk \
     dvipng \
     cm-super \
@@ -29,4 +21,4 @@ COPY . .
 RUN mkdir -p /resume/cv
 
 # Команда для сборки резюме и перемещения готового PDF
-CMD ["sh", "-c", "latexmk -pdf -interaction=nonstopmode main.tex && mv main.pdf cv/resume.pdf"]
+CMD ["sh", "-c", "latexmk -pdf -interaction=nonstopmode -shell-escape main.tex && mv main.pdf cv/resume.pdf"]
