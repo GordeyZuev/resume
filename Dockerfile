@@ -17,4 +17,4 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /workspace
 
-CMD ["sh", "-c", "mkdir -p cv && pdflatex -interaction=nonstopmode main.tex && mv main.pdf cv/resume.pdf"]
+CMD ["sh", "-c", "mkdir -p cv && pdflatex -interaction=nonstopmode main.tex && mv main.pdf cv/resume.pdf && rm -f *.aux *.log *.out"]
