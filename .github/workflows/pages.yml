@@ -35,4 +35,4 @@ jobs:
           destination_dir: cv
           publish_branch: deployed_cv
           keep_files: false
-          exclude_assets: '*.aux,*.log,*.out'
+          exclude_assets: '*.aux,*.log,*.out,.nojekyll'
