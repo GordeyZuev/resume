@@ -19,7 +19,7 @@ jobs:
         run: docker run --rm -v ${{ github.workspace }}:/workspace resume_build
 
       - name: Save pdf artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: resume
           path: ${{ github.workspace }}/cv/resume.pdf
