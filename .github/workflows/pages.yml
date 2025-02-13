@@ -8,9 +8,12 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write  # Даем права на запись в репозиторий
+
     steps:
       - name: Check out repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Обновляем checkout до v4
 
       - name: Build image
         run: docker build --no-cache --tag resume_build -f Dockerfile .
@@ -30,5 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/cv
           destination_dir: cv
-          publish_branch: gh-pages
-          keep_files: false
+          publish_branch: gh-pa
