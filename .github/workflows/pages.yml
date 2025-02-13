@@ -1,4 +1,4 @@
-name: Build Resume
+name: Publish pages
 
 on:
   push:
@@ -6,20 +6,29 @@ on:
       - main
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build --no-cache --tag resume_img -f Dockerfile .
+        run: docker build --no-cache --tag resume_build -f Dockerfile .
 
       - name: Run container
-        run: docker run --rm -v ${{ github.workspace }}:/workspace resume_img
+        run: docker run --rm -v ${{ github.workspace }}:/workspace resume_build
 
-      - name: Upload pdf
+      - name: Save pdf artifact
         uses: actions/upload-artifact@v4
         with:
           name: resume
           path: ${{ github.workspace }}/cv/resume.pdf
+
+      - name: Deploy pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ github.workspace }}/cv
+          destination_dir: cv
+          publish_branch: gh-pages
+          keep_files: false
