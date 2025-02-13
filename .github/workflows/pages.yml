@@ -33,6 +33,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/cv
           destination_dir: cv
-          publish_branch: deployed_cv
+          publish_branch: gh-pages
           keep_files: false
           exclude_assets: '*.aux,*.log,*.out,.nojekyll'
