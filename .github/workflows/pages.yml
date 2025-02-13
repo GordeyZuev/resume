@@ -9,11 +9,11 @@ jobs:
   publish:
     runs-on: ubuntu-22.04
     permissions:
-      contents: write  # Даем права на запись в репозиторий
+      contents: write
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@v4  # Обновляем checkout до v4
+        uses: actions/checkout@v4
 
       - name: Build image
         run: docker build --no-cache --tag resume_build -f Dockerfile .
