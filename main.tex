@@ -1,10 +1,3 @@
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
-
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -39,10 +32,11 @@
 
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -110,18 +104,38 @@
 \setlength{\footskip}{4.1pt}
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
 
 \begin{center}
     \textsc{\Huge{\textbf{Gordey Zuev}}} \\ \vspace{1pt}
     \href{{https://www.linkedin.com/in/gordey-zuev/}}{\textcolor{blue}{LinkedIn}} $|$
     \href{https://github.com/GordeyZuev}{\textcolor{blue}{GitHub}} $|$
+    \href{http://gordeyzuev.notion.site}{\textcolor{blue}{More about me}} $|$
     \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue}{gordey.zuev@gmail.com}}
 \end{center}
+
+
+ %-----------SHORT BIO-----------
+\section{Short Bio}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     {I'm 3rd year student of the Faculty of Computer Science at the National Research University Higher School of Economics (Moscow, Russia). I teach a lot, study machine learning, enjoy sports, urban studies and linguistics.}
+    }}
+ \end{itemize}
+
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python 2.7/3.0+ \textit{(Adanced)}, C/C++ \textit{(average)}, GoLang \textit{(Average)}, Dart \textit{(Beginner)}, RISC-V Assembler \textit{(Average)}} \\
+     \textbf{Frameworks}{: FastAPI, Django, Flutter,} \\
+     \textbf{Libraries}{: PyTorch, TensorFlow, Scikit-learn, pandas, NumPy, Matplotlib} \\
+     \textbf{Developer Tools}{: Git, Docker, CI/CD, PostgreSQL, Redis, VS Code, PyCharm} \\
+     \textbf{Languages}{: Russian (Native), English (\textit{C1}), German (\textit{B1})} \\
+     \textbf{Additional}{: Team management, Public speaking, UX/UI Design} \\
+    }}
+ \end{itemize}
 
 
 %-----------EDUCATION-----------
@@ -129,10 +143,19 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {National Research University Higher School of Economics (HSE)}{Moscow, Russia}
-      {Applied mathematics and informatics}{Sep. 2022 -- June 2026}
+      {Applied mathematics and informatics}{Sep. 2022 -- Present}
+        \resumeItemListStart
+%            \resumeItem{Bachelor's Degree}
+            \resumeItem{Bachelor's Degree, \textbf{GPA} - 2.73}
+        \resumeItemListEnd
+    
     \resumeSubheading
-      {HSE Lyceum}{Moscow, Russia}
-      {Mathematics and Informatics}{Sep. 2019 -- May 2022}
+      {HSE Lyceum}{Moscow, Russia}         
+      {Math and Informatics}{Sep. 2019 -- May 2022}
+        \resumeItemListStart
+%            \resumeItem{High school}
+            \resumeItem{High school, \textbf{GPA} - 3.94}
+        \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
@@ -142,66 +165,61 @@
 
     \resumeSubheading
       {Higher School of Economics}{Moscow, Russia}
-      {Lecturer's Teaching Assistant}{September 2023 -- Present}
+      {\textbf{Lecturer's Teaching Assistant}}{September 2023 -- Present}
       \resumeItemListStart
-        \resumeItem{The course "Programming in Python" - Fall Term 23' and 24'}
-        \resumeItem{The master's course "Applied Python" - Spring Term 24' and 25'}
-        \resumeItem{The course "Python for data collection and analysis" - Spring Term 24' and 25'}
-        \resumeItem{The course "Industrial Development Tools" - Spring Term 24' and 25'}
-        \resumeItem{The main responsibility is to advise students and develop the curriculum.}
+
+        \resumeItem{The course \textbf{"Programming in Python"} - Fall Term 23' and 24'}
+        \resumeItem{The master's course \textbf{"Applied Python"} - Spring Term 24' and 25'}
+        \resumeItem{The course \textbf{"Python for data collection and analysis"} - Spring Term 24' and 25'}
+        \resumeItem{The course \textbf{"Industrial Development Tools"} - Spring Term 24' and 25'}
+        \resumeItem{Became the best semester assistant at the faculty 3 times.}
     \resumeItemListEnd
 
     \resumeSubSubheading
-      {Curator of the educational program}{January 2024 -- Present}
+      {\textbf{Curator of the educational program}}{January 2024 -- Present}
       \resumeItemListStart
-        \resumeItem{Communication with the academic supervisor regarding the curriculum}
-        \resumeItem{Monitoring students' academic performance. Help in solving various problems}
-        \resumeItem{Assistance in organizing the educational process}
-        \resumeItem{Analysis of learning outcomes in all courses}
+        \resumeItem{LMS development based on the Notion website, which contains an updated schedule, current deadlines and all educational information for the faculty.}
+        \resumeItem{Building a rapid communication system between all groups of people at the faculty.}
+        \resumeItem{Decrease the number of students who dropped out by \textasciitilde{ 47\%} (data after a year of work).}
+        \resumeItem{Increase in the average student grade by \textasciitilde{0.84} in the 10-point system.}
     \resumeItemListEnd
 
     \resumeSubheading
-      {HSE Lyceum - Teaching}{Moscow, Russia}
-      {Invited teacher - Cource "Introduction into Olympiad Computer Science. Algorythms"}{September 2023 -- November 23}
+      {Teaching - Lyceum ant Tutoring}{Moscow, Russia}
+      {\textbf{HSE Lyceum, Teacher}: "Programming on Python"}{September 2023 -- Present}
       \resumeItemListStart
-        \resumeItem{Development and design of educational material}
-        \resumeItem{Conducting lessons and consultations}
+        \resumeItem{Assessment of teaching based on a general survey of students - 4.73 / 5.}
+    \resumeItemListEnd
+    
+    \resumeSubSubheading
+      {\textbf{HSE Lyceum, Invited teacher}: "Olympiad Computer Science and algorythms"}{September 2023 -- November 2023}
+      \resumeItemListStart
+        \resumeItem{9/17 students have won at least one Olympiad in computer science during the year.}
     \resumeItemListEnd
 
     \resumeSubSubheading
-      {Lyceum teacher - Cource "Programming on Python"}{November 2023 -- Present}
+      {\textbf{Tutoring}: "Machine Learning" / "Python" / "Applied Math"}{January 2024 -- Present}
       \resumeItemListStart
-        \resumeItem{Development and design of educational material}
-        \resumeItem{Conducting lessons and checking homework assignments}
-        \resumeItem{Participation in the development of materials of the department}
+        \resumeItem{The average grade of teaching on the websites for finding teachers is 5.0 / 5.0.}
+
     \resumeItemListEnd
 
-
-    \resumeSubheading
-      {Tutoring}{Moscow, Russia}
-      {Teacher - Courses "Introduction into ML" / "Algorythms" / "Applied math"}{June 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{Development and design of educational material}
-        \resumeItem{Conducting lessons and consultations}
-    \resumeItemListEnd
-
-
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
+          {\textbf{Mobile App "Football Assistant"} $|$ \emph{Dart, Flutter, PostgreSQL, Git, Docker, Figma,}}{July 2022 -- Present}
           \resumeItemListStart
-            \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
+            \resumeItem{Developed a full-stack mobile application using with Flask serving a REST API with React as the frontend}
             \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
             \resumeItem{Visualized GitHub data to show collaboration}
             \resumeItem{Used Celery and Redis for asynchronous tasks}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
+          {\textbf{Website for Automatic Purchase of Tickets} $|$ \emph{Java, PostgreSQL, Redis, Git, React, Figma}}{November 2024 -- Present}
           \resumeItemListStart
             \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
             \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
@@ -211,11 +229,13 @@
     \resumeSubHeadingListEnd
 
 
+
+%-----------HONORS AND AWARDS-----------
 \section{Awards}
 
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Award "The best teaching Assistant of the semester"}{Higher School of Economics - 3 Times}
+      {Award "The best teaching Assistant of the semester" x3}{Higher School of Economics}
       {The award is given for high results in the position of a teaching assistant.}{October 2023}
         \resumeItemListStart
             \resumeItem{The course "Programming in Python", Fall Term 23'}
@@ -224,7 +244,7 @@
           \resumeItemListEnd
 
     \resumeSubheading
-      {Award "Young entrepreneur at the Faculty"}{Higher School of Economics}
+      {Award "Young entrepreneur of the Faculty"}{Higher School of Economics}
       {The award is given to students with outstanding startup projects.}{October 2023}
 
     \resumeSubheading
@@ -237,21 +257,4 @@
 
   \resumeSubHeadingListEnd
 
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Programming Languages}{: Python, PostgreSQL, RISC-V Assembler, C/C++} \\
-     \textbf{Frameworks}{: FastAPI} \\
-     \textbf{Developer Tools}{: Git, Docker, VS Code, PyCharm} \\
-     \textbf{Libraries}{: Scikit-learn, pandas, NumPy, Matplotlib} \\
-     \textbf{Languages}{: Russian (Native), English (C1), German (B1)}
-    }}
- \end{itemize}
-
-
-%-------------------------------------------
 \end{document}
