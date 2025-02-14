@@ -143,7 +143,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {National Research University Higher School of Economics (HSE)}{Moscow, Russia}
-      {Applied mathematics and informatics}{Sep. 2022 -- Present}
+      {Applied mathematics and informatics}{Sep 22' -- Present}
         \resumeItemListStart
 %            \resumeItem{Bachelor's Degree}
             \resumeItem{Bachelor's Degree, \textbf{GPA} - 2.73}
@@ -151,12 +151,50 @@
     
     \resumeSubheading
       {HSE Lyceum}{Moscow, Russia}         
-      {Math and Informatics}{Sep. 2019 -- May 2022}
+      {Math and Informatics}{Sep 19' -- May 22'}
         \resumeItemListStart
 %            \resumeItem{High school}
             \resumeItem{High school, \textbf{GPA} - 3.94}
         \resumeItemListEnd
   \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+%-----------PROJECT 1-----------
+      \resumeProjectHeading
+          {\textbf{Research - Predicting dropout risk based on academic and workload factors} $|$ \emph{Machine learning}}{Nov 24' -- Present}
+          \resumeItemListStart
+            \resumeItem{\textbf{Data Collection \& Preprocessing}: \textit{Python} (\textit{pandas}, \textit{numpy}) and \textit{Scikit-learn} to collect and preprocess all data. Handled missing values, scaled features. \textit{SMOTE} for class imbalance.}
+            \resumeItem{\textbf{EDA}: \textit{Seaborn}, \textit{Matplotlib}, Correlation analysis to visualize dropout rates, to find strong negative correlation between GPA and dropout risk, to identify high-risk groups.}
+            \resumeItem{\textbf{Model Training \& Evaluation}: using different models: \textit{Logistic Regression} and \textit{XGBoost} to choose the best one. XGBoost showed highest \textbf{F1-score (0.84) and ROC-AUC (0.91)}.}
+            \resumeItem{\textbf{Interpretation}: Using \textit{SHAP values for feature importance}. Top dropout predictors: GPA, working hours, job sector, satisfaction score.}
+            \resumeItem{\textbf{Results}: ML models effectively predict the risk of dropout, with workload and GPA as critical factors. The results from this study can help universities implement preventive measures and optimize the balance between students' work and studies, preventing burnout and students' dropout.}
+          \resumeItemListEnd
+
+%-----------PROJECT 2-----------
+      \resumeProjectHeading
+          {\textbf{Website for Automatic Purchase of Tickets} $|$ \emph{Java, PostgreSQL, Redis, Git, React, Figma}}{Nov 24' -- Present}
+          \resumeItemListStart
+            \resumeItem{\textbf{Backend part}: \textit{Java}, \textit{PostgreSQL} to build the core logic, authentication, \textit{REST API} for ticket booking.}
+            \resumeItem{\textbf{Frontend part}. Develop a responsive UI with \textit{Figma} and \textit{React}, integrating it with the backend using \textit{REST APIs} for real-time ticket updates.}
+            \resumeItem{\textbf{Testing \& Deployment}. \textit{JUnit}, \textit{Docker} and \textit{Kubernetes} for testing, containerization (with \textit{Redis} caching).}
+          \resumeItemListEnd
+
+%-----------PROJECT 3-----------
+
+      \resumeProjectHeading
+          {\textbf{Mobile App "Football Assistant"} $|$ \emph{Dart, Flutter, PostgreSQL, Git, Docker, Figma,}}{Jul 22' -- May 24'}
+          \resumeItemListStart
+            \resumeItem{\textbf{Research \& Design} – Conducted market analysis, defined user flows, designed app architecture \textit{(Flutter, Firebase, PostgreSQL, REST API)}.}
+            \resumeItem{\textbf{Development \& Integration} – Built a cross-platform app \textit{(Flutter, Dart)}, implemented backend \textit{(FastAPI, PostgreSQL)}, and integrated real-time match tracking.}
+            \resumeItem{\textbf{Testing \& Optimization } – \textit{PyTest}, \textit{Flutter test}, \textit{WebSockets} for real-time updates.}
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
 
 
 %-----------EXPERIENCE-----------
@@ -165,7 +203,7 @@
 
     \resumeSubheading
       {Higher School of Economics}{Moscow, Russia}
-      {\textbf{Lecturer's Teaching Assistant}}{September 2023 -- Present}
+      {\textbf{Lecturer's Teaching Assistant}}{Sep 23' -- Present}
       \resumeItemListStart
 
         \resumeItem{The course \textbf{"Programming in Python"} - Fall Term 23' and 24'}
@@ -176,7 +214,7 @@
     \resumeItemListEnd
 
     \resumeSubSubheading
-      {\textbf{Curator of the educational program}}{January 2024 -- Present}
+      {\textbf{Curator of the educational program}}{Jan 24' -- Present}
       \resumeItemListStart
         \resumeItem{LMS development based on the Notion website, which contains an updated schedule, current deadlines and all educational information for the faculty.}
         \resumeItem{Building a rapid communication system between all groups of people at the faculty.}
@@ -186,19 +224,19 @@
 
     \resumeSubheading
       {Teaching - Lyceum ant Tutoring}{Moscow, Russia}
-      {\textbf{HSE Lyceum, Teacher}: "Programming on Python"}{September 2023 -- Present}
+      {\textbf{HSE Lyceum, Teacher}: "Programming on Python"}{Sep 23' -- Present}
       \resumeItemListStart
         \resumeItem{Assessment of teaching based on a general survey of students - 4.73 / 5.}
     \resumeItemListEnd
     
     \resumeSubSubheading
-      {\textbf{HSE Lyceum, Invited teacher}: "Olympiad Computer Science and algorythms"}{September 2023 -- November 2023}
+      {\textbf{HSE Lyceum, Invited teacher}: "Olympiad Computer Science and algorythms"}{Sep 23' -- Nov 23'}
       \resumeItemListStart
         \resumeItem{9/17 students have won at least one Olympiad in computer science during the year.}
     \resumeItemListEnd
 
     \resumeSubSubheading
-      {\textbf{Tutoring}: "Machine Learning" / "Python" / "Applied Math"}{January 2024 -- Present}
+      {\textbf{Tutoring}: "Machine Learning" / "Python" / "Applied Math"}{Jan 24' -- Present}
       \resumeItemListStart
         \resumeItem{The average grade of teaching on the websites for finding teachers is 5.0 / 5.0.}
 
@@ -207,40 +245,13 @@
 \resumeSubHeadingListEnd
 
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-
-%-----------PROJECT 1-----------
-      \resumeProjectHeading
-          {\textbf{Mobile App "Football Assistant"} $|$ \emph{Dart, Flutter, PostgreSQL, Git, Docker, Figma,}}{July 2022 -- Present}
-          \resumeItemListStart
-            \resumeItem{\textbf{Research \& Design} – Conducted market analysis, defined user flows, designed app architecture \textit{(Flutter, Firebase, PostgreSQL, REST API)}.}
-            \resumeItem{\textbf{Development \& Integration} – Built a cross-platform app \textit{(Flutter, Dart)}, implemented backend \textit{(FastAPI, PostgreSQL)}, and integrated real-time match tracking.}
-            \resumeItem{\textbf{Testing \& Optimization } – \textit{PyTest}, \textit{Flutter test}, \textit{WebSockets} for real-time updates.}
-          \resumeItemListEnd
-
-%-----------PROJECT 2-----------
-      \resumeProjectHeading
-          {\textbf{Website for Automatic Purchase of Tickets} $|$ \emph{Java, PostgreSQL, Redis, Git, React, Figma}}{November 2024 -- Present}
-          \resumeItemListStart
-            \resumeItem{\textbf{Backend part}: \textit{Java}, \textit{PostgreSQL} to build the core logic, authentication, \textit{REST API} for ticket booking.}
-            \resumeItem{\textbf{Frontend part}. Develop a responsive UI with \textit{Figma} and \textit{React}, integrating it with the backend using \textit{REST APIs} for real-time ticket updates.}
-            \resumeItem{\textbf{Testing \& Deployment}. \textit{JUnit}, \textit{Docker} and \textit{Kubernetes} for testing, containerization (with \textit{Redis} caching).}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-%-----------PROJECT 3-----------
-
-
-
 %-----------HONORS AND AWARDS-----------
 \section{Awards}
 
   \resumeSubHeadingListStart
     \resumeSubheading
       {Award "The best teaching Assistant of the semester" x3}{Higher School of Economics}
-      {The award is given for high results in the position of a teaching assistant.}{October 2023}
+      {The award is given for high results in the position of a teaching assistant.}{Sep 23' - June 24'}
         \resumeItemListStart
             \resumeItem{The course "Programming in Python", Fall Term 23'}
             \resumeItem{The course "Python for data collection and analysis", Spring Term 24'}
@@ -249,15 +260,15 @@
 
     \resumeSubheading
       {Award "Young entrepreneur of the Faculty"}{Higher School of Economics}
-      {The award is given to students with outstanding startup projects.}{October 2023}
+      {The award is given to students with outstanding startup projects.}{October 23'}
 
     \resumeSubheading
       {Winner of the "Kurchatov" Olympiad (Math)}{Moscow, Russia}
-      {The Olympiad is held by the Kurchatov Institute National Research Center}{April 2022}
+      {The Olympiad is held by the Kurchatov Institute National Research Center}{April 22'}
 
     \resumeSubheading
       {Winner of the "PhysTech" Olympiad (Math)}{Moscow, Russia}
-      {The Olympiad is held by MIPT (Moscow Institute of Physics and Technology) }{April 2022}
+      {The Olympiad is held by MIPT (Moscow Institute of Physics and Technology) }{April 22'}
 
   \resumeSubHeadingListEnd
 
