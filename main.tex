@@ -4,7 +4,7 @@
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -16,7 +16,6 @@
 \usepackage{kpfonts} 
 
 \input{glyphtounicode}
-
 
 
 %----------FONT OPTIONS----------
@@ -54,7 +53,7 @@
 % Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{}[\color{gray}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -98,19 +97,20 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\footskip}{4.1pt}
 \begin{document}
 
-
+ %-----------HEADING-----------
 \begin{center}
     \textsc{\Huge{\textbf{Gordey Zuev}}} \\ \vspace{1pt}
-    \href{{https://www.linkedin.com/in/gordey-zuev/}}{\textcolor{blue}{LinkedIn}} $|$
-    \href{https://github.com/GordeyZuev}{\textcolor{blue}{GitHub}} $|$
-    \href{http://gordeyzuev.notion.site}{\textcolor{blue}{More about me}} $|$
-    \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue}{gordey.zuev@gmail.com}}
+    \href{{https://www.linkedin.com/in/gordey-zuev/}}{\textcolor{blue!50!black}{LinkedIn}} $|$
+    \href{https://github.com/GordeyZuev}{\textcolor{blue!50!black}{GitHub}} $|$
+    \href{http://gordeyzuev.notion.site}{\textcolor{blue!50!black}{More about me}} $|$
+    \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue!50!black}{gordey.zuev@gmail.com}}
 \end{center}
 
 
@@ -123,15 +123,15 @@
  \end{itemize}
 
 
-%-----------PROGRAMMING SKILLS-----------
+%-----------SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming Languages}{: Python 2.7/3.0+ \textit{(Adanced)}, C/C++ \textit{(average)}, GoLang \textit{(Average)}, Dart \textit{(Beginner)}, RISC-V Assembler \textit{(Average)}} \\
+     \textbf{Programming Languages}{: Python 2.7/3.0+ \textit{(Advanced)}, C/C++ \textit{(average)}, GoLang \textit{(average)}, Dart \textit{(beginner)}, RISC-V Assembler \textit{(average)}} \\
      \textbf{Frameworks}{: FastAPI, Django, Flutter,} \\
      \textbf{Libraries}{: PyTorch, TensorFlow, Scikit-learn, pandas, NumPy, Matplotlib} \\
      \textbf{Developer Tools}{: Git, Docker, CI/CD, PostgreSQL, Redis, VS Code, PyCharm} \\
-     \textbf{Languages}{: Russian (Native), English (\textit{C1}), German (\textit{B1})} \\
+     \textbf{Languages}{: Russian (native), English (\textit{C1}), German (\textit{B1})} \\
      \textbf{Additional}{: Team management, Public speaking, UX/UI Design} \\
     }}
  \end{itemize}
@@ -144,7 +144,6 @@
       {National Research University Higher School of Economics (HSE)}{Moscow, Russia}
       {Applied mathematics and informatics}{Sep 22' -- Present}
         \resumeItemListStart
-%            \resumeItem{Bachelor's Degree}
             \resumeItem{Bachelor's Degree, \textbf{GPA} - 2.73.}
         \resumeItemListEnd
     
@@ -152,7 +151,6 @@
       {HSE Lyceum}{Moscow, Russia}         
       {Math and Informatics}{Sep 19' -- May 22'}
         \resumeItemListStart
-%            \resumeItem{High school}
             \resumeItem{High school, \textbf{GPA} - 3.94.}
         \resumeItemListEnd
   \resumeSubHeadingListEnd
@@ -162,15 +160,13 @@
 \section{Research Interests}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Machine Learning, Graphs, Networks, Game theory, Big Data} and all their intersections.
-    }}
+     \textbf{Machine Learning, Graphs, Networks, Game theory, Big Data} and all their intersections.}}
  \end{itemize}
 
 
 %-----------PROJECTS & RESEARCH-----------
 \section{Projects \& research}
     \resumeSubHeadingListStart
-    
 
 %-----------PROJECT 1-----------
       \resumeProjectHeading
@@ -183,6 +179,7 @@
             \resumeItem{\textbf{Results}: ML models effectively predict the risk of dropout, with workload and GPA as critical factors. The results from this study can help universities implement preventive measures and optimize the balance between students' work and studies, preventing burnout and students' dropout.}
           \resumeItemListEnd
 
+
 %-----------PROJECT 2-----------
       \resumeProjectHeading
           {\textbf{Website for automatic purchase of tickets} $|$ \emph{Java, PostgreSQL, Redis, Git, React, Figma}}{Nov 24' -- Present}
@@ -192,8 +189,8 @@
             \resumeItem{\textbf{Testing \& Deployment}. \textit{JUnit}, \textit{Docker} and \textit{Kubernetes} for testing, containerization (with \textit{Redis} caching).}
           \resumeItemListEnd
 
-%-----------PROJECT 3-----------
 
+%-----------PROJECT 3-----------
       \resumeProjectHeading
           {\textbf{Mobile app "Football assistant"} $|$ \emph{Dart, Flutter, PostgreSQL, Git, Docker, Figma,}}{Jul 22' -- May 24'}
           \resumeItemListStart
@@ -201,9 +198,7 @@
             \resumeItem{\textbf{Development \& integration} – Built a cross-platform app \textit{(Flutter, Dart)}, implemented backend \textit{(FastAPI, PostgreSQL)}, and integrated real-time match tracking.}
             \resumeItem{\textbf{Testing \& optimization } – \textit{PyTest}, \textit{Flutter test}, \textit{WebSockets} for real-time updates.}
           \resumeItemListEnd
-          
     \resumeSubHeadingListEnd
-
 
 
 %-----------EXPERIENCE-----------
@@ -214,21 +209,17 @@
       {Higher School of Economics}{Moscow, Russia}
       {\textbf{Lecturer's Teaching Assistant}}{Sep 23' -- Present}
       \resumeItemListStart
-
         \resumeItem{The course \textbf{"Programming in Python"} - Fall Term 23' and 24'}
         \resumeItem{The master's course \textbf{"Applied Python"} - Spring Term 24' and 25'}
         \resumeItem{The course \textbf{"Python for data collection and analysis"} - Spring Term 24' and 25'}
         \resumeItem{The course \textbf{"Industrial Development Tools"} - Spring Term 24' and 25'}
-        \resumeItem{Became the best semester assistant at the faculty 3 times.}
     \resumeItemListEnd
 
     \resumeSubSubheading
       {\textbf{Curator of the educational program}}{Jan 24' -- Present}
       \resumeItemListStart
         \resumeItem{LMS development based on the Notion website, which contains an updated schedule, current deadlines and all educational information for the faculty.}
-        \resumeItem{Building a rapid communication system between all groups of people at the faculty.}
-        \resumeItem{Decrease the number of students who dropped out by \textasciitilde{ 47\%} (data after a year of work).}
-        \resumeItem{Increase in the average student grade by \textasciitilde{0.84} in the 10-point system.}
+        \resumeItem{Building a communication system between students and all other groups at the faculty and increasing the availability of educational and organizational information, which led to a \textasciitilde{47\%} decrease in the number of students who dropped out.}
     \resumeItemListEnd
 
     \resumeSubheading
@@ -247,8 +238,7 @@
     \resumeSubSubheading
       {\textbf{Tutoring}: "Machine Learning" / "Python" / "Applied Math"}{Jan 24' -- Present}
       \resumeItemListStart
-        \resumeItem{The average grade of teaching on the websites for finding teachers is 5.0 / 5.0.}
-
+        \resumeItem{The average grade of teaching on the websites for finding teachers is 5 / 5.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -272,12 +262,12 @@
       {The award is given to students with outstanding startup projects.}{October 23'}
 
     \resumeSubheading
-      {Winner of the "Kurchatov" Olympiad (Math)}{Moscow, Russia}
-      {The Olympiad is held by the Kurchatov Institute National Research Center}{April 22'}
+      {Winner of the "Kurchatov" Olympiad \color{gray}{(Math)}}{Moscow, Russia}
+      {The Olympiad is held by the Kurchatov Institute National Research Center.}{April 22'}
 
     \resumeSubheading
-      {Winner of the "PhysTech" Olympiad (Math)}{Moscow, Russia}
-      {The Olympiad is held by MIPT (Moscow Institute of Physics and Technology) }{April 22'}
+      {Winner of the "PhysTech" Olympiad \color{gray}{(Math)}}{Moscow, Russia}
+      {The Olympiad is held by MIPT (Moscow Institute of Physics and Technology).}{April 22'}
 
   \resumeSubHeadingListEnd
 
