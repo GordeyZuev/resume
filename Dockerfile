@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     cm-super \
     texlive-lang-cyrillic \
     texlive-xetex \
+    chktex \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace

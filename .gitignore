@@ -5,3 +5,6 @@
 *.out
 *.toc
 .nojekyll
+
+# VS Code settings
+.vscode/

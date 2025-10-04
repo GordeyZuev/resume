@@ -1,6 +1,6 @@
 \documentclass[letterpaper,11pt]{article}
-
 \usepackage{latexsym}
+
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english, russian]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
+% \input{glyphtounicode}  % Commented out - file not found
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -86,8 +86,6 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\footskip}{4.1pt}
 \begin{document}
@@ -107,7 +105,7 @@
 \section{Краткая информация}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Junior Python-разработчик} с опытом в прикладной математике (НИУ ВШЭ). Специализируюсь на создании эффективных бэкенд-решений. Обожаю оптимизировать всё вокруг себя, интересуюсь архитектурой распределённых систем. Преподавательский опыт (3+ года) развил навыки менторства и объяснения сложных концепций. Участвовал в разработке высоконагруженных сервисов и ML-моделей. Лауреат конкурсов для преподавателей и олимпиад по математике.
+     \textbf{Python Backend-разработчик} с опытом работы над высоконагруженными системами и сервисами мониторинга данных. Специализируюсь на создании масштабируемых бэкенд-решений с использованием \textit{FastAPI}, \textit{PostgreSQL}, \textit{Redis} и современных архитектурных подходов. Обладаю глубокими знаниями в области оптимизации производительности, рефакторинга схем БД и проектирования API. Преподавательский опыт развил навыки менторства и работы в команде.
     }}
  \end{itemize}
 
@@ -117,17 +115,18 @@
 \begin{itemize}[leftmargin=0.15in, label={}, nosep]
     \small
     \item \textbf{Backend-разработка:} 
-          Python, FastAPI, Flask, asyncio, REST API, WebSockets
+          Python, FastAPI, asyncio, REST API, WebSockets, APScheduler
     
     \item \textbf{Базы данных:} 
           PostgreSQL (\textit{SQLAlchemy, asyncpg}), 
           Redis, 
           MongoDB
     
+    \item \textbf{Парсинг \& Автоматизация:} 
+          Selenium, httpx, BeautifulSoup, автоматизация браузера
+    
     \item \textbf{DevOps \& Инфраструктура:} 
-          Docker, 
-          CI/CD (\textit{GitHub Actions}), 
-          Kafka
+          Docker, CI/CD (\textit{GitHub Actions}), Kafka, мониторинг (\textit{Sentry})
     
     \item \textbf{Тестирование:} 
           pytest, Locust
@@ -137,15 +136,46 @@
     
     \item \textbf{Языки:} 
           русский (\textit{носитель}),
-          английский (\textit{B2+, техническая документация}), 
-          немецкий (\textit{B1})
+          английский (\textit{B2+, техническая документация})
 
     \item \textbf{Soft-Skills:}
-        Преподавание,
+        Преподавание, 
         менторство,
         публичные выступления
     
 \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+    {\textbf{Yandex - «DataContracts»}}{Июль 25' -- Ноябрь 25'}
+    {Backend-разработчик Python $|$ Строгая типизация, FastAPI, PostgreSQL}{Москва, Россия}
+    \resumeItemListStart
+
+      \resumeItem{\textbf{Рефакторинг схемы БД:} Провёл рефакторинг схемы базы данных \textit{PostgreSQL}, что улучшило масштабируемость системы и уменьшило время выполнения ключевых запросов.}
+
+      \resumeItem{\textbf{Механизм управления статусами:} Разработал и внедрил механизм ручного управления статусами контрактов, что позволило командам-потребителям данных самостоятельно разрешать инциденты.}
+      
+      \resumeItem{\textbf{Комплексные правила мониторинга:} Добавил поддержку комплексных правил мониторинга из нескольких источников данных, увеличив гибкость платформы для сложных бизнес-сценариев.}
+      
+      \resumeItem{\textbf{Система подсказок:} Спроектировал и реализовал систему подсказок (suggests) для мониторинга и эскалаций, сократив время создания новых контрактов.}
+
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {\textbf{Высшая Школа Экономики}}{Сен 23' -- Наст. время}
+      {Образовательная деятельность}{Москва, Россия}
+      \resumeItemListStart
+      
+        \resumeItem{\textbf{Преподавание:} \textbf{Более 860 студентов} в университете и лицее.}
+        
+        \resumeItem{\textbf{Кураторство и автоматизация:} Разработал систему управления обучением (Python, Notion API). Обучил ML-модель для прогнозирования отчислений. \textbf{Снижение отчислений на $\sim 47\%$}}
+        
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 %-----------PROJECTS & RESEARCH-----------
 \section{Проекты и исследования}
@@ -153,86 +183,49 @@
 
 %-----------PROJECT 1-----------
     \resumeProjectHeading
-    {\textbf{Автоматическая бронь билетов} $|$ \emph{Архитектура: Python, FastAPI, PostgreSQL, Redis}}{Ноя 24` -- Июнь 25`}
+    {\href{https://github.com/GordeyZuev/hse_bot_ai_masters}{\textcolor{blue!50!black}{\textbf{HSE AI Deadlines Bot}}} $|$ \emph{Python, PostgreSQL, Telegram Bot API, Google Sheets API}}{Авг 25' -- Сен 25'}
     \resumeItemListStart
-        \resumeItem{Разработал \textbf{API-спецификации} (\textit{OpenAPI} / \textit{Swagger}) для интеграции \textit{frontend} и \textit{backend}.}
-        \resumeItem{Спроектировал  и реализовал \textbf{схему БД (\textit{PostgreSQL})} для сервиса с оптимизированными индексами.}
-        \resumeItem{Реализовал \textbf{логику кэширования} билетов через \textit{Redis} для уменьшения нагрузки на БД.}
-        % \resumeItem{Провел \textbf{нагрузочное тестирование} (Locust) и оптимизировал запросы, сократив latency на 25\%}
-        % \resumeItem{Настроил \textbf{Docker-окружение} для тестирования и CI/CD пайплайн}
-        \resumeItem{\underline{\textbf{Итог:}} Создал отказоустойчивую систему бронирования с кэшированием и продуманной схемой БД, готовую к высоким нагрузкам}
+        \resumeItem{Разработал \textbf{telegram-бота} с ежедневной синхронизацией данных из \textit{Google Sheets API} и автоматическим парсингом дедлайнов.}
+        \resumeItem{Реализовал \textbf{систему подписок} с настройкой типов уведомлений, временных зон и отключением по предметам через \textit{APScheduler}.}
+        \resumeItem{\textbf{Отказоустойчивая архитектура:} Внедрил систему ретраев и fallback на локальную БД при недоступности \textit{Google Sheets API}.}
+        \resumeItem{\underline{\textbf{Итог:}} Стабильный бот с 500+ активными пользователями, 99.8\% uptime и автоматическим восстановлением после сбоев внешних сервисов}
     \resumeItemListEnd
-
 
 %-----------PROJECT 2-----------
-      \resumeProjectHeading
-          {\textbf{Приложение «Football Assistant»} $|$ \emph{Flutter (Dart), PostgreSQL, Docker, Figma}}{Июл 22' -- Май 24'}
-          \resumeItemListStart
-          
-            \resumeItem{\textbf{Исследование и дизайн} – Проведен анализ рынка, определены пользовательские сценарии, разработана архитектура приложения \textit{(Flutter, PostgreSQL, REST API)}.}
-            
-            \resumeItem{\textbf{Разработка и интеграция} – Создано кроссплатформенное приложение \textit{(Flutter, Dart)}, реализован backend \textit{(FastAPI, PostgreSQL)}, интегрировано отслеживание матчей в реальном времени.}
-            
-            \resumeItem{\textbf{Тестирование и оптимизация} – \textit{PyTest}, \textit{Flutter test}, \textit{WebSockets} для обновлений в реальном времени.}
-             \resumeItem{\underline{\textbf{Итог:}} Разработано кроссплатформенное приложение для проведения и анализа футбольных матчей любого уровня с функцией отслеживания в реальном времени.}
-          \resumeItemListEnd
-
-
- %-----------PROJECT 3-----------
     \resumeProjectHeading
-        {\textbf{Обучение модели для прогнозирование риска отчисления} $|$ \emph{Python, ML}}{Ноя 24` -- Мар 25'}
-        \resumeItemListStart
-
-            \resumeItem{\textbf{Сбор и обработка данных:} \textit{Python} (\textit{pandas}, \textit{numpy}) и \textit{Scikit-learn} для сбора и обработки данных. Данные - учебные и неучебные (работа, личная жизнь).} 
-            \resumeItem{\textbf{Обучение модели:} Обучение нескольких моделей с результатом - \textit{ROC-AUC} (0.91) и \textit{F1-score} (0.84).} 
-            \resumeItem{Реализация на \textit{Python} (\textit{pandas}, \textit{SQLAlchemy}) автоматической обработки данных из образовательной системы}
-            \resumeItem{\underline{\textbf{Итоги}}: Модель помогла создать систему раннего предупреждения студентов, снизив уровень отчислений.}
-        \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-
-%-----------EXPERIENCE-----------
-\section{Опыт работы}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Высшая школа экономики}{Москва, Россия}
-      {\textbf{Ассистент преподавателя}}{Сен 23' -- Наст. время}
-      \resumeItemListStart
-      
-        \resumeItem{Курсы: \textbf{«Программирование на Python»} / \textbf{«Python для анализа данных»} / \textbf{«Инструменты разработки»} / \textbf{«Прикладной Python»} \textit{(магистратура)}. Суммарно \textbf{более 860 студентов}.}
-        
-        \resumeItem{\textbf{Проведение code-review} всех ДЗ, разработка методического материала и \textbf{проведение консультаций}. Количество несдавших снизилось в среднем на $\sim 13\%$.}
-        
+    {\href{https://github.com/GordeyZuev/RestoMaps-Analytics}{\textcolor{blue!50!black}{\textbf{RestoMaps-Analytics}}} $|$ \emph{Python, Streamlit, Notion \& Yandex Maps API, Selenium, Sentry}}{Июль 25' -- Окт 25'}
+    \resumeItemListStart
+        \resumeItem{Создал \textbf{систему анализа ресторанных данных} с интеграцией \textit{Notion API} и \textit{Yandex Maps} для агрегации отзывов и оценок.}
+        \resumeItem{Реализовал \textbf{автоматический парсинг отзывов} через \textit{Selenium} и анализ тональности с помощью \textit{NLTK/spaCy}.}
+        \resumeItem{Разработал \textbf{интерактивную визуализацию} на \textit{Streamlit} с картами \textit{(Folium)} и аналитическими дашбордами \textit{(Plotly)}.}
+        \resumeItem{\underline{\textbf{Итог:}} Комплексное решение для анализа ресторанов из личных заметок с умными фильтрами и визуализацией данных на карте}
     \resumeItemListEnd
 
-    \resumeSubSubheading
-      {\textbf{Куратор образовательной программы}}{Янв 24' -- Наст. время}
-      \resumeItemListStart
-      
-        \resumeItem{Разработал систему управления обучением на основе Notion, \textbf{используя Python-скрипты  и Notion API}.}
-
-        \resumeItem{\textbf{Обучил модель} (на учебных и неучебных данных), определяющую студентов с риском отчисления.}
-        
-        \resumeItem{\underline{\textbf{Итог:}} Повышение доступности информации и уменьшение числа отчислившихся на $\sim 47\%$.}
-        
+%-----------PROJECT 3-----------
+    \resumeProjectHeading
+    {\textbf{Автоматическая бронь билетов} $|$ \emph{FastAPI, PostgreSQL, Redis}}{Ноя 24' -- Июнь 25'}
+    \resumeItemListStart
+        \resumeItem{Разработал \textbf{API-спецификации} и спроектировал схему БД с оптимизированными индексами.}
+        \resumeItem{Реализовал \textbf{логику кэширования} через \textit{Redis} для снижения нагрузки на БД.}
+        \resumeItem{\underline{\textbf{Итог:}} Отказоустойчивая система бронирования с кэшированием, готовая к высоким нагрузкам}
     \resumeItemListEnd
 
-    \resumeSubheading
-      {Преподавание}{Москва, Россия}
-      {\textbf{Лицей НИУ ВШЭ}: «Программирование на Python» / «Алгоритмы»}{Сен 23' -- Май 24'}
-      \resumeItemListStart
-      
-        \resumeItem{Средняя оценка преподавания - \textbf{4.73/5.0}. Средняя оценка учеников выросла на $\sim 18\%$.}
-        
-        \resumeItem{\textbf{9/16} студентов \textbf{победили как минимум в одной олимпиаде} по информатике в течение года.}
+%-----------PROJECT 4-----------
+    \resumeProjectHeading
+    {\textbf{Football Assistant} $|$ \emph{Flutter, PostgreSQL, WebSockets}}{Июл 22' -- Май 23'}
+    \resumeItemListStart
+        \resumeItem{Разработал \textbf{кроссплатформенное приложение} \textit{(Flutter/Dart)} с backend и отслеживанием матчей в реальном времени.}
+        \resumeItem{Интегрировал \textbf{WebSockets} для live-обновлений и провел тестирование \textit{(PyTest, Flutter test)}.}
+        \resumeItem{\underline{\textbf{Итог:}} Полнофункциональное приложение для проведения и анализа футбольных матчей с real-time обновлениями}
     \resumeItemListEnd
 
-    \resumeSubSubheading
-      {\textbf{Репетиторство}: «Прикладной Python» / «Анализ данных»}{Май 23' -- Наст. время}
-      \resumeItemListStart
-        \resumeItem{Обучил \textbf{17 студентов}. Средняя оценка \href{https://profi.ru/profile/ZuyevGA2/}{\textcolor{blue!50!black}{на сервисе по поиску репетиторов}} - 5.0 / 5.0.}
+%-----------PROJECT 5-----------
+    \resumeProjectHeading
+    {\textbf{ML-модель прогнозирования отчислений} $|$ \emph{Python, Scikit-learn, pandas}}{Ноя 24' -- Мар 25'}
+    \resumeItemListStart
+        \resumeItem{Обучил \textbf{ML-модель} на учебных и неучебных данных с результатами \textit{ROC-AUC (0.91)} и \textit{F1-score (0.84)}.}
+        \resumeItem{Автоматизировал обработку данных из образовательной системы через \textit{SQLAlchemy}.}
+        \resumeItem{\underline{\textbf{Итог:}} Система раннего предупреждения, снизившая уровень отчислений студентов.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -242,63 +235,30 @@
   \resumeSubHeadingListStart
   
     \resumeSubheading
-      {НИУ ВШЭ (Высшая Школа Экономики)}{Москва, Россия}
-      {Бакалавриат - \textbf{Прикладная математика и направление}}{Сен 22' -- Наст. время}
-        \resumeItemListStart
-            \resumeItem{\textbf{Направление}: Промышленное программирование, распределенные системы.}
-        \resumeItemListEnd
-    
-    \resumeSubheading
-      {Лицей НИУ ВШЭ}{Москва, Россия}         
-      {Лицей с углубленным изучением \textbf{математики и информатики}}{Сен 19' -- Май 22'}
-        \resumeItemListStart
-            \resumeItem{\textbf{Направление}: Математические олимпиады и программирование. \textbf{GPA}: 3.94.}
-        \resumeItemListEnd
-  \resumeSubHeadingListEnd
+      {Высшая Школа Экономики}{Сен 22' -- Наст. время}
+      {Бакалавриат - \textbf{Прикладная математика и информатика}}{Москва, Россия}
 
+    % \resumeSubheading
+    %   {НИУ ВШЭ (Высшая Школа Экономики)}{Сен 26' -- Наст. время}
+    %   {Магистратура - _}{_}
 
-%-----------EXTRA COURCES-----------
-\section{Дополнительное образование}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Ассистенты преподавателя (Яндекс)}{Москва, Россия}         
-      {Менторство и преподавание}{Июнь 23' -- Май 24'}
-
-    \resumeSubheading
-      {Летняя школа ФКН по предпринимательству (ВШЭ)}{Москва, Россия}         
-      {Изучение пути создания и развития продукта}{Лето 23' и Лето 24'}
-
-    \resumeSubheading
-      {Курсы ораторского мастерства}{Москва, Россия}         
-      {I Ступень - Речь и II Ступень - Публичные выступления}{Фев 23' -- Май 23'}
-      
-  \resumeSubHeadingListEnd
-
-
+\resumeSubHeadingListEnd
 
 %-----------HONORS AND AWARDS-----------
 \section{Награды и достижения}
   \resumeSubHeadingListStart
   
     \resumeSubheading
-      {Награда \href{https://cs.hse.ru/initiative/bestassistants}{\textcolor{blue!50!black}{«Лучший ассистент преподавателя семестра»} x3}}{Высшая школа экономики}
-      {Курсы: \textbf{«Python»}, \textbf{«Анализ данных»} и \textbf{«Инструменты разработки»}}{Сен 23' - Июнь 24'}
+      {Победитель всероссийских олимпиад по математике}{Апр 22'}
+      {«Курчатов», «Физтех» (МФТИ)}{Москва, Россия}
 
     \resumeSubheading
-      {Награда \href{https://cs.hse.ru/news/874256115.html}{\textcolor{blue!50!black}{«Молодой предприниматель факультета»}}}{Высшая школа экономики}
-      {Лучшая идея среди 20+ студенческих стартапов.}{Ноя 23'}
-      
-    \resumeSubheading
-      {Победитель олимпиады «Курчатов» по математике (Топ 0.7\%)}{Москва, Россия}
-      {Вошел в топ 0.7\% из 20,000+ участников.}{Апр 22'}
-
-    \resumeSubheading
-      {Победитель олимпиады «Физтех» (МФТИ) по математике (Топ 1.3\%)}{Москва, Россия}
-      {Вошел в топ 1.3\% из 15,807 участников.}{Апр 22'}
+      {Награда \href{https://cs.hse.ru/news/874256115.html}{\textcolor{blue!50!black}{«Молодой предприниматель факультета»}}}{Ноя 23'}
+      {Лучшая идея среди 20+ студенческих стартапов.}{Высшая школа экономики}
 
      \resumeSubheading
-      {Благодарность от факультета}{Высшая школа экономики}
-      {Отмечен за вклад в развитие образовательной программы.}{Дек 24'}
+      {Благодарность от факультета}{Дек 24'}
+      {Отмечен за вклад в развитие образовательной программы.}{Высшая школа экономики}
       
 \resumeSubHeadingListEnd
 

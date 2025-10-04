@@ -1,4 +1,4 @@
-name: Publish pages
+name: Build and Publish Resume
 
 on:
   push:
@@ -6,14 +6,22 @@ on:
       - main
 
 jobs:
-  publish:
+  build-and-deploy:
     runs-on: ubuntu-22.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Build image
         run: docker build --no-cache --tag resume_build -f Dockerfile .
@@ -27,12 +35,27 @@ jobs:
           name: resume
           path: ${{ github.workspace }}/cv/resume.pdf
 
-      - name: Deploy pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Commit PDF to main
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull --rebase origin main
+          git add cv/resume.pdf
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update resume PDF [skip ci]"
+            git push origin main
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/cv
-          destination_dir: cv
-          publish_branch: gh-pages
-          keep_files: false
-          exclude_assets: '*.aux,*.log,*.out,.nojekyll'
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

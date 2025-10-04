@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Gordey Zuev</title>
+  <meta name="description" content="Professional resume and CV of Gordey Zuev">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #232F6E 0%, #1a2a5a 100%);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .btn {
+      background: #232F6E;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn:hover {
+      background: #1a2a5a;
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .pdf-container {
+      flex: 1;
+      position: relative;
+      background: white;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      border-radius: 12px;
+    }
+    
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #232F6E;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(35, 47, 110, 0.3);
+      border-top: 3px solid #232F6E;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .footer {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    
+    .footer a {
+      color: #232F6E;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .controls {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .pdf-container {
+        margin: 0.5rem;
+        border-radius: 8px;
+      }
+      
+      iframe {
+        border-radius: 8px;
+        width: 100%;
+        height: 100vh;
+      }
+      
+      .footer {
+        padding: 1rem;
+        position: relative;
+        z-index: 10;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Resume - Gordey Zuev</h1>
+      <div class="controls">
+        <a href="cv/resume.pdf" class="btn" target="_blank" download>
+          📥 Download PDF
+        </a>
+        <a href="cv/resume.pdf" class="btn" target="_blank" id="phoneVersionBtn">
+          📱 Phone version
+        </a>
+      </div>
+    </header>
+    
+    <div class="pdf-container">
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        Loading resume...
+      </div>
+      <iframe src="cv/resume.pdf#toolbar=1&navpanes=1&scrollbar=1&zoom=FitV&view=FitV&pagemode=none" id="pdfFrame"></iframe>
+    </div>
+    
+    <footer class="footer">
+      <p>
+        Last updated: <span id="lastUpdated"></span> | 
+        <a href="https://github.com/gordeyzuev/resume" target="_blank">View on GitHub</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Detect mobile device
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+             window.innerWidth <= 768;
+    }
+    
+    // Configure PDF viewer based on device
+    const iframe = document.getElementById('pdfFrame');
+    const loading = document.getElementById('loading');
+    
+    // Configure PDF viewer and controls based on device
+    const phoneVersionBtn = document.getElementById('phoneVersionBtn');
+    
+    if (isMobile()) {
+      // Mobile: show phone version button and basic PDF viewer
+      iframe.src = 'cv/resume.pdf#toolbar=1&scrollbar=1&zoom=FitV';
+      phoneVersionBtn.style.display = 'inline-flex';
+      phoneVersionBtn.innerHTML = '📱 Phone version';
+    } else {
+      // Desktop: hide phone button and use clean PDF viewer
+      iframe.src = 'cv/resume.pdf#toolbar=0&scrollbar=1&zoom=FitH';
+      phoneVersionBtn.style.display = 'none';
+    }
+    
+    // Hide loading indicator once PDF loads
+    iframe.onload = function() {
+      loading.style.display = 'none';
+    };
+    
+    // Update last modified date
+    fetch('cv/resume.pdf', { method: 'HEAD' })
+      .then(response => {
+        const lastModified = response.headers.get('Last-Modified');
+        if (lastModified) {
+          document.getElementById('lastUpdated').textContent = new Date(lastModified).toLocaleDateString();
+        }
+      })
+      .catch(() => {
+        document.getElementById('lastUpdated').textContent = 'Recently';
+      });
+    
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', function() {
+      if (isMobile()) {
+        // Mobile: show phone version button and basic PDF viewer
+        iframe.src = 'cv/resume.pdf#toolbar=1&scrollbar=1&zoom=FitV';
+        phoneVersionBtn.style.display = 'inline-flex';
+        phoneVersionBtn.innerHTML = '📱 Phone version';
+      } else {
+        // Desktop: hide phone button and use clean PDF viewer
+        iframe.src = 'cv/resume.pdf#toolbar=0&scrollbar=1&zoom=FitH';
+        phoneVersionBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
