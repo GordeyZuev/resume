@@ -23,6 +23,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Pull latest changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull --rebase origin main || true
+
       - name: Build image
         run: docker build --no-cache --tag resume_build -f Dockerfile .
 
@@ -37,9 +43,6 @@ jobs:
 
       - name: Commit PDF to main
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git pull --rebase origin main
           git add cv/resume.pdf
           if git diff --staged --quiet; then
             echo "No changes to commit"
