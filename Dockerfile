@@ -18,4 +18,4 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /workspace
 
-CMD ["sh", "-c", "mkdir -p cv && pdflatex -interaction=nonstopmode main.tex && mv main.pdf cv/resume.pdf && rm -f *.aux *.log *.out .nojekyll"]
+CMD ["sh", "-c", "mkdir -p cv && pdflatex -interaction=nonstopmode -halt-on-error=false main.tex && pdflatex -interaction=nonstopmode -halt-on-error=false main.tex || true && mv main.pdf cv/resume.pdf 2>/dev/null || cp main.pdf cv/resume.pdf && rm -f *.aux *.log *.out .nojekyll main.pdf"]

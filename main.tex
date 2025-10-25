@@ -94,10 +94,10 @@
 \begin{center}
     \textsc{\Huge{\textbf{Гордей Зуев}}} \\ \vspace{1pt}
     
-    \href{{https://t.me/gordeyzuev}}{\textcolor{blue!50!black}{Telegram}} $|$
-    \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue!50!black} {gordey.zuev@gmail.com}} $|$
+    \href{https://t.me/gordeyzuev}{\textcolor{blue!50!black}{Telegram}} $|$
+    \href{mailto:gordey.zuev@gmail.com}{\textcolor{blue!50!black}{gordey.zuev@gmail.com}} $|$
     \href{https://github.com/GordeyZuev}{\textcolor{blue!50!black}{GitHub}} $|$
-    \href{{https://www.linkedin.com/in/gordey-zuev/}}{\textcolor{blue!50!black}{LinkedIn}}
+    \href{https://www.linkedin.com/in/gordey-zuev/}{\textcolor{blue!50!black}{LinkedIn}}
 \end{center}
 
 
@@ -122,10 +122,10 @@
           Redis, 
           MongoDB
     
-    \item \textbf{Парсинг \& Автоматизация:} 
+    \item \textbf{Парсинг / Автоматизация:} 
           Selenium, httpx, BeautifulSoup, автоматизация браузера
     
-    \item \textbf{DevOps \& Инфраструктура:} 
+    \item \textbf{DevOps / Инфраструктура:} 
           Docker, CI/CD (\textit{GitHub Actions}), Kafka, мониторинг (\textit{Sentry})
     
     \item \textbf{Тестирование:} 
@@ -183,25 +183,33 @@
 
 %-----------PROJECT 1-----------
     \resumeProjectHeading
-    {\href{https://github.com/GordeyZuev/hse_bot_ai_masters}{\textcolor{blue!50!black}{\textbf{HSE AI Deadlines Bot}}} $|$ \emph{Python, PostgreSQL, Telegram Bot API, Google Sheets API}}{Авг 25' -- Сен 25'}
+    {\href{https://github.com/GordeyZuev/hse_bot_ai_masters}{\textcolor{blue!50!black}{\textbf{HSE AI Deadlines Bot}}} $|$ \emph{Python, uv, ruff, PostgreSQL, Telegram / Google API}}{Авг 25' -- Окт 25'}
     \resumeItemListStart
-        \resumeItem{Разработал \textbf{telegram-бота} с ежедневной синхронизацией данных из \textit{Google Sheets API} и автоматическим парсингом дедлайнов.}
-        \resumeItem{Реализовал \textbf{систему подписок} с настройкой типов уведомлений, временных зон и отключением по предметам через \textit{APScheduler}.}
-        \resumeItem{\textbf{Отказоустойчивая архитектура:} Внедрил систему ретраев и fallback на локальную БД при недоступности \textit{Google Sheets API}.}
-        \resumeItem{\underline{\textbf{Итог:}} Стабильный бот с 500+ активными пользователями, 99.8\% uptime и автоматическим восстановлением после сбоев внешних сервисов}
+        \resumeItem{Разработал \textbf{Telegram-бота} с ежедневной синхронизацией данных из \textit{Google Sheets API} и автоматическим парсингом дедлайнов.}
+        \resumeItem{Реализовал \textbf{систему подписок} через \textit{APScheduler} и \textbf{отказоустойчивую архитектуру с ретраями и fallback} на локальную БД.}
+        \resumeItem{\underline{\textbf{Итог:}} Стабильный бот с 500+ активными пользователями, \textbf{99.8\%} uptime и автоматическим восстановлением после сбоев}
     \resumeItemListEnd
 
 %-----------PROJECT 2-----------
     \resumeProjectHeading
-    {\href{https://github.com/GordeyZuev/RestoMaps-Analytics}{\textcolor{blue!50!black}{\textbf{RestoMaps-Analytics}}} $|$ \emph{Python, Streamlit, Notion \& Yandex Maps API, Selenium, Sentry}}{Июль 25' -- Окт 25'}
+    {\href{https://github.com/GordeyZuev/RestoMaps-Analytics}{\textcolor{blue!50!black}{\textbf{RestoMaps-Analytics}}} $|$ \emph{Python, Streamlit, Notion / Yandex.Maps API, Selenium, Sentry}}{Июль 25' -- Окт 25'}
     \resumeItemListStart
         \resumeItem{Создал \textbf{систему анализа ресторанных данных} с интеграцией \textit{Notion API} и \textit{Yandex Maps} для агрегации отзывов и оценок.}
-        \resumeItem{Реализовал \textbf{автоматический парсинг отзывов} через \textit{Selenium} и анализ тональности с помощью \textit{NLTK/spaCy}.}
+        \resumeItem{Реализовал \textbf{автоматический парсинг отзывов} через \textit{Selenium} и анализ тональности.}
         \resumeItem{Разработал \textbf{интерактивную визуализацию} на \textit{Streamlit} с картами \textit{(Folium)} и аналитическими дашбордами \textit{(Plotly)}.}
         \resumeItem{\underline{\textbf{Итог:}} Комплексное решение для анализа ресторанов из личных заметок с умными фильтрами и визуализацией данных на карте}
     \resumeItemListEnd
 
 %-----------PROJECT 3-----------
+    \resumeProjectHeading
+    {\href{https://github.com/GordeyZuev/ZoomUploader}{\textcolor{blue!50!black}{\textbf{ZoomUploader}}} $|$ \emph{Python, uv, ruff, FFmpeg, Zoom / YouTube / VK API}}{Окт 25'}
+    \resumeItemListStart
+        \resumeItem{Разработал \textbf{автоматизированную систему} для загрузки, обработки и публикации записей Zoom на \textit{YouTube} и \textit{VK}.}
+        \resumeItem{Реализовал \textbf{пайплайн обработки видео} через \textit{FFmpeg} и интегрировал многоаккаунтную поддержку Zoom API.}
+        \resumeItem{\underline{\textbf{Итог:}} Полнофункциональная система автоматизации видео-контента с поддержкой множественных аккаунтов}
+    \resumeItemListEnd
+
+%-----------PROJECT 4-----------
     \resumeProjectHeading
     {\textbf{Автоматическая бронь билетов} $|$ \emph{FastAPI, PostgreSQL, Redis}}{Ноя 24' -- Июнь 25'}
     \resumeItemListStart
@@ -210,7 +218,7 @@
         \resumeItem{\underline{\textbf{Итог:}} Отказоустойчивая система бронирования с кэшированием, готовая к высоким нагрузкам}
     \resumeItemListEnd
 
-%-----------PROJECT 4-----------
+%-----------PROJECT 5-----------
     \resumeProjectHeading
     {\textbf{Football Assistant} $|$ \emph{Flutter, PostgreSQL, WebSockets}}{Июл 22' -- Май 23'}
     \resumeItemListStart
@@ -219,7 +227,7 @@
         \resumeItem{\underline{\textbf{Итог:}} Полнофункциональное приложение для проведения и анализа футбольных матчей с real-time обновлениями}
     \resumeItemListEnd
 
-%-----------PROJECT 5-----------
+%-----------PROJECT 6-----------
     \resumeProjectHeading
     {\textbf{ML-модель прогнозирования отчислений} $|$ \emph{Python, Scikit-learn, pandas}}{Ноя 24' -- Мар 25'}
     \resumeItemListStart
